@@ -8,6 +8,7 @@ public enum DrivingModeType {
     private String modeName;
 
     DrivingModeType(String modeName) {
+    	System.out.println("constructor: "+this);
         this.modeName = modeName;
     }
 
