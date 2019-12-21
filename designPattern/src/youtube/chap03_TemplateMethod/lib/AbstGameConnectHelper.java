@@ -2,25 +2,26 @@ package youtube.chap03_TemplateMethod.lib;
 
 public abstract class AbstGameConnectHelper {
 	
-	//¾Ë°í¸®Áò Àº´ĞÈ­("ÅëÇÕÁ¢¼Ó")
-	//1.ÀÏÁ¤ÇÑ ÇÁ·Î¼¼½º¸¦ °¡Áü(º¸¾È>ÀÎÁõ>±ÇÇÑ>Á¢¼Ó)
-	//±¸Á¶(ÇÁ·Î¼¼½º)ÀÇ º¯°æÀº ¾ø´Ù.
-	//2.ÇÏÀ§Å¬·¡½ºº°·Î ±¸ÇöÀÇ ¿©Áö¸¦ ³²°Ü³õÀ½
-	//¾Ë°í¸®ÁòÀº ÀçÁ¤ÀÇÇÑ´Ù.
+
+	//ì•Œê³ ë¦¬ì¦˜ ì€ë‹‰í™”("í†µí•©ì ‘ì†")
+	//1.ì¼ì •í•œ í”„ë¡œì„¸ìŠ¤ë¥¼ ê°€ì§(ë³´ì•ˆ>ì¸ì¦>ê¶Œí•œ>ì ‘ì†)
+	//êµ¬ì¡°(í”„ë¡œì„¸ìŠ¤)ì˜ ë³€ê²½ì€ ì—†ë‹¤.
+	//2.í•˜ìœ„í´ë˜ìŠ¤ë³„ë¡œ êµ¬í˜„ì˜ ì—¬ì§€ë¥¼ ë‚¨ê²¨ë†“ìŒ
+	//ì•Œê³ ë¦¬ì¦˜ì€ ì¬ì •ì˜í•œë‹¤.
 	protected abstract String doSecurity(String encodedInfo);
 	protected abstract boolean authentication(String id, String password);
 	protected abstract int authorization(String userName);
 	protected abstract String connection(String info);
 	
-	//ÅÛÇÃ¸´¸Ş¼Òµå
-	//ÅÛÇÃ¸´¿¡ ÀÖ´Â ¸Ş¼ÒµåÁß À¯ÀÏÇÏ°Ô »ç¿ëÀÚ¿¡°Ô °ø°³µÊ.
-	//¸ğµç ÇÏÀ§Å¬·¡½º°¡ µ¿ÀÏÇÑ ±â´ÉÀ» °®À½. 
+	//í…œí”Œë¦¿ë©”ì†Œë“œ
+	//í…œí”Œë¦¿ì— ìˆëŠ” ë©”ì†Œë“œì¤‘ ìœ ì¼í•˜ê²Œ ì‚¬ìš©ìì—ê²Œ ê³µê°œë¨.
+	//ëª¨ë“  í•˜ìœ„í´ë˜ìŠ¤ê°€ ë™ì¼í•œ ê¸°ëŠ¥ì„ ê°–ìŒ. 
 	public String requestConnection(String encodedInfo) {
 		String decodedInfo = doSecurity(encodedInfo);
 		String id = "aaa";
 		String password = "bbb";
 		if(!authentication(id, password)) {
-			throw new Error("¾ÆÀÌµğ ¾ÏÈ£ ºÒÀÏÄ¡");
+			throw new Error("ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½Ä¡");
 		}
 		 
 		String userName = "userName";
@@ -28,7 +29,7 @@ public abstract class AbstGameConnectHelper {
 		
 		switch (i) {
 		case 0:
-			throw new Error("¼Ë´Ù¿î");
+			throw new Error("ï¿½Ë´Ù¿ï¿½");
 		case 1:
 			
 			break;

@@ -1,11 +1,13 @@
-package youtube.chap03_TemplateMethod.lib;
+package youtube.chap03_TemplateMethod;
+
+import youtube.chap03_TemplateMethod.lib.AbstGameConnectHelper;
 
 public class DefaultGameConnectionHelper extends AbstGameConnectHelper {
 
 	@Override
 	protected String doSecurity(String encodedInfo) {
 		// TODO Auto-generated method stub
-		System.out.println("µğÄÚµù");
+		System.out.println("ë””ì½”ë”©");
 		String decodedInfo = encodedInfo;
 		return decodedInfo;
 	}
@@ -13,7 +15,7 @@ public class DefaultGameConnectionHelper extends AbstGameConnectHelper {
 	@Override
 	protected boolean authentication(String id, String password) {
 		// TODO Auto-generated method stub
-		System.out.println("¾ÆÀÌµğ/¾ÏÈ£ È®ÀÎ°úÁ¤");
+		System.out.println("ì•„ì´ë””/ì•”í˜¸ í™•ì¸ê³¼ì •");
 		
 		return true;
 	}
@@ -21,7 +23,7 @@ public class DefaultGameConnectionHelper extends AbstGameConnectHelper {
 	@Override
 	protected int authorization(String userName) {
 		// TODO Auto-generated method stub
-		System.out.println("±ÇÇÑÈ®ÀÎ");
+		System.out.println("ê¶Œí•œí™•ì¸");
 		
 		return 1;
 	}
@@ -29,7 +31,7 @@ public class DefaultGameConnectionHelper extends AbstGameConnectHelper {
 	@Override
 	protected String connection(String info) {
 		// TODO Auto-generated method stub
-		System.out.println("¸¶Áö¸· ´Ü°è : Á¢¼Ó!");
+		System.out.println("ë§ˆì§€ë§‰ ë‹¨ê³„ : ì ‘ì†!");
 		return info;
 	}
 
